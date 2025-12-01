@@ -1,0 +1,8 @@
+x <- 10
+y <- 5
+add <- x + y # Addition
+sub <- x - y # Subtraction
+mul <- x * y # Multiplication
+div <- x / y # Division
+power <- x ^ y # Exponentiation (x to the power y)
+mod <- x %% y # Modulus (remainder)
