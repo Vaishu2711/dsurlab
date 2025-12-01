@@ -1,0 +1,10 @@
+student <- data.frame(
+  name=c("A","B","C"),
+  roll=c(1,2,3),
+  s1=c(80,70,90),
+  s2=c(85,75,95),
+  s3=c(78,88,92)
+)
+
+student$total <- student$s1 + student$s2 + student$s3
+student
