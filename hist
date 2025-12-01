@@ -1,0 +1,31 @@
+marks <- c(78, 65, 90, 55, 82, 70, 95, 60, 85, 73,
+88, 76, 92, 69, 81, 75, 89, 67, 94, 80)
+hist(marks,
+main="Histogram of Student Marks",
+xlab="Marks",
+ylab="Number of Students",
+col="purple",
+border="black",
+breaks=5)
+
+
+
+departments <- c("HR", "Finance", "IT", "Marketing", "Sales")
+employee_count <- c(15, 25, 33, 17, 22)
+barplot(employee_count,
+names.arg=departments,
+main="Bar Chart of Employees by Department",
+xlab="Department",
+ylab="Number of Employees",
+col="green",
+las=2)
+
+
+departments <- c("HR", "Finance", "IT", "Marketing", "Sales")
+employee_count <- c(12, 20, 35, 15, 18)
+pie(employee_count,
+labels=paste(departments, ":", employee_count),
+main="Pie Chart of Employees by Department",
+col=rainbow(length(employee_count)))
+
+
