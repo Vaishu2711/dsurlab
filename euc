@@ -1,0 +1,11 @@
+m <- matrix(1:16, nrow=4)
+
+# Distances between row 1 & row 2
+x <- m[1,]
+y <- m[2,]
+
+euclidean <- dist(rbind(x,y), method="euclidean")
+manhattan <- dist(rbind(x,y), method="manhattan")
+minkowski <- dist(rbind(x,y), method="minkowski", p=3)
+
+euclidean; manhattan; minkowski
