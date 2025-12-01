@@ -1,0 +1,18 @@
+calculator <- function(a, b) {
+result <- list(
+Addition = a + b,
+Subtraction = a - b,
+Multiplication = a * b,
+Division = a / b,
+Power = a ^ b,
+Modulus = a %% b
+)
+return(result)
+}
+res <- calculator(18, 2)
+# Save results to a file (RDS format)
+saveRDS(res, file = "calculator_output.rds")
+# Read results back from the file
+read_res <- readRDS("calculator_output.rds")
+# Print loaded results
+print(read_res)
