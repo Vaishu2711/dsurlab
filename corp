@@ -1,0 +1,4 @@
+data <- mtcars
+cor(data)
+library(corrplot)
+corrplot(cor(data), method="circle")
