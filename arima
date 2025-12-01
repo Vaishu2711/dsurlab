@@ -1,0 +1,4 @@
+library(forecast)
+hw_model <- HoltWinters(ts_data) hw_forecast <- forecast(hw_model, h = 12)
+plot(hw_forecast,main = "Holt-Winters Forecast (Next 12 Months)", col = "darkgreen")
+arima_model <- auto.arima(ts_data) arima_forecast <- forecast(arima_model, h = 12) plot(arima_forecast,main = "ARIMA Forecast (Next 12 Months)", col = "purple")
