@@ -1,0 +1,64 @@
+install.packages(“tidyr”)
+library(tidyr)
+df <- data.frame(Name = c("Jessy", "Leo"), Score = c("40,50", "60,70"))
+df_sep <- separate(df, Score, into = c("Score 1", "Score 2"), sep = ",")
+print(df_sep)
+
+
+library(ggplot2)# Sample data
+df <- data.frame(
+Height = c(210, 220, 230, 280, 270),
+Weight = c(100, 155, 165, 170, 180))
+# Create scatter plot
+ggplot(df, aes(x = Height, y =Weight))
+geom_point(color = "red", size = 5) +
+ggtitle("Height vs Weight") +
+xlab("Height (cm)") +
+ylab("Weight (kg)")
+
+
+install.packages(“ggraph”)
+library(ggraph)
+library(igraph)
+graph <- make_ring(7)
+# Plot the graph
+ggraph(graph, layout = "circle") + geom_edge_link() +
+geom_node_point(size = 7, color = "red") +
+ggtitle("Simple 3-Node Ring Graph")
+
+
+install.packages(“glue”)
+library(ggraph)
+name <"Vaishnavi"
+age <- 20
+score <- 90
+message <- glue("Hello, my name is {name}, I am {age} years old and I scored {score} in
+exams.")
+print(message)
+
+
+
+
+install.packages(“shiny”)
+library(shiny)
+ui <- fluidPage(
+titlePanel("Mini Calculator"),
+numericInput("num1", "First number:", 0),
+numericInput("num2", "Second number:", 0),
+radioButtons("operation", "Choose operation:",
+choices = c("Add", "Subtract", "Multiply", "Divide")),
+textOutput("result")
+)
+server <- function(input, output) {
+output$result <- renderText({
+res <- switch(input$operation,
+"Add" = input$num1 + input$num2,
+"Subtract" = input$num1 - input$num2,
+"Multiply" = input$num1 * input$num2,
+"Divide" = {
+if(input$num2 == 0) "Cannot divide by zero" else input$num1 /
+input$num2 })
+paste("Result:", res)
+})
+}
+shinyApp(ui = ui, server = server)
