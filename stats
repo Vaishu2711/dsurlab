@@ -1,0 +1,8 @@
+# Load dataset
+data(iris)
+# View first few rows
+head(iris)
+# Basic descriptive statistics for all columns
+stats <- summary(iris)
+# Print the results
+print(stats)
