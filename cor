@@ -1,0 +1,18 @@
+data(iris)
+iris_numeric <- iris[, 1:4]
+cor_matrix <- cor(iris_numeric)
+print(cor_matrix)
+
+
+install.packages("corrplot")
+library(corrplot)
+data(iris)
+iris_numeric <- iris[, 1:4]
+cor_matrix <- cor(iris_numeric)
+# Plot correlation matrix
+corrplot(cor_matrix, method = "color", type = "upper",
+addCoef.col = "black", # Add correlation coefficients
+tl.col = "black", tl.srt = 45,
+title = "Correlation Plot of Iris Dataset", mar=c(0,0,1,0))
+
+
