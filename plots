@@ -1,0 +1,27 @@
+Math <- c(78, 65, 90, 55, 82)
+Science <- c(88, 76, 92, 69, 81)
+English <- c(70, 82, 78, 65, 85)
+marks <- data.frame(Math, Science, English)
+boxplot(marks, main="Box Plot of Student Marks", col=c("blue","red","purple"))
+
+
+
+Math <- c(78, 65, 90, 55, 82, 70, 95, 60, 85, 73)
+Science <- c(88, 76, 92, 69, 81, 75, 89, 67, 94, 80)
+plot(Math, Science, main="Scatter Plot of Math vs Science Marks",
+xlab="Math Marks", ylab="Science Marks",
+col="pink", pch=17)
+
+
+marks <- c(78, 65, 90, 55, 82, 70, 95, 60, 85, 73, 10, 105)
+Q1 <- quantile(marks, 0.25)
+Q3 <- quantile(marks, 0.75)
+IQR_value <- Q3 - Q1
+lower_bound <- Q1 - 1.5 * IQR_value
+upper_bound <- Q3 + 1.5 * IQR_value
+outliers <- marks[marks < lower_bound | marks > upper_bound]
+print(paste("Outliers using IQR formula:", paste(outliers, collapse=", ")))
+boxplot(marks, main="Box Plot of Marks with Outliers", col="lightblue")
+
+
+
