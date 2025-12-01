@@ -1,0 +1,38 @@
+file_path <-"D:/R/Iris.csv"
+data_csv <-read.csv(file_path)
+print("CSV Data from Disk:")
+head(data_csv)
+
+
+url <- "https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv"
+iris_data <- read.csv(url, header = TRUE, stringsAsFactors = FALSE)
+head(iris_data)
+
+
+txt_file_path <- "D:/R/marks_all.txt"
+data_txt <- read.table(txt_file_path,header=TRUE)
+print(data_txt)
+
+
+output_csv_path <- "D:/R/iris.csv"
+write.csv(data_csv, file = output_csv_path, row.names = FALSE)
+cat("CSV file written successfully at:", output_csv_path, "\n")
+
+
+install.packages("readxl")
+library(readxl)
+marks_data <- read_excel("D:/R/marks.xlsx")
+head(marks_data)
+summary(marks_data)
+print(marks_data)
+
+
+install.packages("xml2")
+library(xml2)
+xml_file <- "D:/R/stud_marks.xml"
+data<-read_xml(xml_file)
+print(data)
+
+
+
+
