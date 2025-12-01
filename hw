@@ -1,0 +1,11 @@
+height <- c(150,155,160,165,170,175,180)
+weight <- c(50,55,60,65,70,72,80)
+
+model <- lm(weight ~ height)
+summary(model)
+
+new <- data.frame(height = 172)
+predict(model, new)
+
+plot(height, weight)
+abline(model, col="red")
