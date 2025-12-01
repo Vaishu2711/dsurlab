@@ -1,0 +1,4 @@
+write("Hello DSUR Lab!", file="file1.txt")
+
+data <- readLines("file1.txt")
+write(data, file="file2.txt")
