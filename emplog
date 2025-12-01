@@ -1,0 +1,14 @@
+emp <- data.frame(
+  experience = c(1,3,5,7,9,2,4,6,8,10),
+  salary = c(25000,30000,40000,50000,60000,28000,35000,45000,55000,65000),
+  promoted = c(0,0,0,1,1,0,0,1,1,1)  # 1 = promoted, 0 = not
+)
+
+# Logistic regression model
+model <- glm(promoted ~ experience + salary, data = emp, family = "binomial")
+
+summary(model)
+
+# Predict for new employee
+new_emp <- data.frame(experience = 5, salary = 42000)
+predict(model, newdata = new_emp, type = "response")
