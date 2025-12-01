@@ -1,0 +1,14 @@
+student <- data.frame(
+  hours = c(1,2,3,4,5,6,7,8,9,10),
+  score = c(40,45,50,55,60,65,70,75,80,85)
+)
+write.csv(student, "student.csv", row.names = FALSE)
+
+# Read and regression
+data <- read.csv("student.csv")
+model <- lm(score ~ hours, data=data)
+summary(model)
+
+# Plot
+plot(data$hours, data$score)
+abline(model, col="blue")
