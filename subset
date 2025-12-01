@@ -1,0 +1,13 @@
+# Load dataset
+data(iris)
+# View first few rows
+head(iris)
+# Subset: Select rows where Sepal.Length > 5.0
+subset1 <- subset(iris, Sepal.Length > 5.0)
+head(subset1)
+# Subset: Select rows where Species is "setosa"
+subset2 <- subset(iris, Species == "setosa")
+head(subset2)
+# Subset: Select specific columns (Sepal.Length and Petal.Length)
+subset3 <- subset(iris, Species == "versicolor", select = c(Sepal.Length, Petal.Length))
+head(subset3)
