@@ -1,0 +1,3 @@
+data(iris)
+anova_result <- aov(Sepal.Length ~ Species, data = iris)
+summary(anova_result)
