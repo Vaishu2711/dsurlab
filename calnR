@@ -1,0 +1,6 @@
+5 + 10 # Addition
+55 - 25 # Subtraction
+9 * 3 # Multiplication
+16 / 4 # Division
+9 ^ 2 # Power (7 squared)
+20 %% 4 # Modulus (remainder of 20 ÷ 4)
