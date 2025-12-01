@@ -1,0 +1,4 @@
+m <- matrix(runif(100), nrow=10)
+d <- dist(m)          # distance matrix
+hc <- hclust(d)       # hierarchical clustering
+plot(hc)
